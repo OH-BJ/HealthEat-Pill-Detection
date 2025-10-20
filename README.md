@@ -1,26 +1,40 @@
-
 # 헬스잇(Health Eat) 경구약제 이미지 인식 프로젝트
 
-## 🎯 프로젝트 목표
-- 약 사진에서 최대 4개의 알약 종류와 위치를 탐지하는 Object Detection 모델을 개발합니다.
+> 사용자가 촬영한 약 사진으로부터 알약의 종류와 위치를 탐지하는 객체 탐지(Object Detection) 모델 개발 프로젝트입니다.
 
-## 🧑‍🤝‍🧑 팀 멤버
-- **팀장**: 오병주
-- **팀원**: [팀원1_GitHub_ID](https://github.com/팀원1_GitHub_ID)
-- **팀원**: [팀원2_GitHub_ID](https://github.com/팀원2_GitHub_ID)
+---
+
+##  주요 기능
+- 이미지 속 최대 4개 알약의 클래스(이름) 탐지
+- 이미지 속 알약의 위치(Bounding Box) 탐지
+- [추후 추가될 기능]
+- [추후 추가될 기능]
+
+---
+
+##  팀 멤버 및 역할
+| 역할 | 이름 | GitHub |
+| :--- | :--- | :--- |
+|  **Project Manager** | [오병주] | [@OH-BJ](https://github.com/OH-BJ) |
+|  **Data Engineer** | [이상윤] | [@SYLforge](https://github.com/SYLforge) |
+|  **Model Architect** | [서준범] | [@Seo-Junbeom](https://github.com/Seo-Junbeom) |
+|  **Experimentation Lead** | [김승우] | [@carsy078-maker](https://github.com/carsy078-maker) |
+
+---
+
+## 📝 최종 결과물 링크
+| 구분 | 링크 |
+| :--- | :--- |
+|  **최종 보고서** | [보고서 링크 삽입 예정] |
+|  **오병주 협업 일지** | [개인별 링크 삽입 예정] |
+|  **이상윤 협업 일지** | [개인별 링크 삽입 예정] |
+|  **서준범 협업 일지** | [개인별 링크 삽입 예정] |
+|  **김승우 협업 일지** | [개인별 링크 삽입 예정] |
+
+---
 
 ## 🛠️ 개발 환경
-- **언어**: Python 3.x
-- **주요 라이브러리**: PyTorch, OpenCV, Pandas
-- **개발 환경**: Google Colab
-
-## 📂 폴더 구조
-- **/data**: 이미지, 라벨 등 원본 데이터셋
-- **/notebooks**: EDA 및 실험용 Colab 노트북
-- **/src**: 모델, 데이터 로더 등 핵심 소스 코드
-- **/output**: 학습된 모델 가중치, 결과 파일
-
-## 🚀 실행 방법
-1. (추후 작성 예정)
-2. (추후 작성 예정)
-
+- **언어**: `Python 3.x`
+- **프레임워크**: `PyTorch`
+- **주요 라이브러리**: `OpenCV`, `Pandas`, `Numpy`
+- **개발 도구**: `Visual Studio Code`
