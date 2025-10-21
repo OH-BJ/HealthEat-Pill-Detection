@@ -1,4 +1,17 @@
+# Data
 data/ai05-level1-project
+data/yolo/images/train_images/*
+data/yolo/images/val_images/*
+!data/yolo/images/train_images/.gitkeep
+!data/yolo/images/val_images/.gitkeep
+data/yolo/labels/train_images/*
+data/yolo/labels/val_images/*
+!data/yolo/images/train_images/.gitkeep
+!data/yolo/imaegs/val_images/.gitkeep
+data/yolo/labels/train_images.cache
+data/yolo/labels/val_images.cache
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
