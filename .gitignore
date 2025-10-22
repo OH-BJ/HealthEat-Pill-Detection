@@ -11,6 +11,11 @@ data/yolo/labels/val_images/*
 data/yolo/labels/train_images.cache
 data/yolo/labels/val_images.cache
 
+#
+yolo11n.pt
+yolov8n.pt
+
+
 
 
 # Byte-compiled / optimized / DLL files
