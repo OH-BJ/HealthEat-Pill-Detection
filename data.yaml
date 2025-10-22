@@ -4,7 +4,7 @@ path: data/yolo
 train: images/train_images
 val: images/val_images
 
-nc: 73
+nc: 74
 
 names:
   0: "보령부스파정 5mg"
@@ -80,3 +80,4 @@ names:
   70: "로수바미브정 10/20mg"
   71: "카발린캡슐 25mg"
   72: "케이캡정 50mg"
+  73: "넥시움정 40mg"
