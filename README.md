@@ -42,8 +42,13 @@
 ##  개발 환경
 - **언어**: `Python 3.x`
 - **프레임워크**: `PyTorch`
-- **주요 라이브러리**: `OpenCV`, `Pandas`, `Numpy`
-- **개발 도구**: `Visual Studio Code`
+- **핵심 모델**: `YOLOv8` (`ultralytics` 라이브러리)
+- **주요 라이브러리**:
+    * 데이터 처리: `pandas`, `numpy`
+    * 이미지 처리: `opencv-python`, `Pillow`
+    * 시각화: `matplotlib`, `seaborn`
+- **라벨링 도구**: `CVAT` (누락 라벨 보완용)
+- **개발 도구**: `Visual Studio Code` (`ipykernel` 포함)
 
 ---
 
