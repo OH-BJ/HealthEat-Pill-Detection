@@ -9,14 +9,16 @@ import re
 # 1. 설정 변수
 # =================================================================
 
-# 학습된 YOLO 모델 가중치 파일 경로
-MODEL_WEIGHTS_PATH = 'runs/yolov8_exp_251021_1426/weights/best.pt'
+RUN_DIR = 'runs/yolov8_exp_251021_1426'
 
 # 테스트 이미지가 있는 폴더 경로
 TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
 
+# 학습된 YOLO 모델 가중치 파일 경로
+MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')
+
 # 제출 파일 저장 경로
-OUTPUT_CSV_PATH = 'submission.csv'
+OUTPUT_CSV_PATH = os.path.join(RUN_DIR, 'submission.csv')
 
 # =================================================================
 # 2. 클래스 ID 매핑 (YOLO ID -> 원본 ID)
@@ -70,11 +72,10 @@ def generate_submission_csv():
 
     # 2. 테스트 이미지 목록 가져오기
     # .png, .jpg 등 모든 이미지 확장자를 포함하도록 glob 사용
-    image_paths = glob.glob(os.path.join(TEST_IMAGES_DIR, '*.png')) + \
-                  glob.glob(os.path.join(TEST_IMAGES_DIR, '*.jpg'))
+    image_paths = glob.glob(os.path.join(TEST_IMAGES_DIR, '*.png'))
     
     if not image_paths:
-        print(f"🚨 오류: 테스트 이미지 폴더({TEST_IMAGES_DIR})에서 이미지를 찾을 수 없습니다.")
+        print(f"오류: 테스트 이미지 폴더({TEST_IMAGES_DIR})에서 이미지를 찾을 수 없습니다.")
         return
 
     # 파일명 기준 오름차순 정렬 (1.png, 2.png, ... 순서 보장)
@@ -93,13 +94,16 @@ def generate_submission_csv():
         image_id = get_image_id(file_name)
         
         if image_id == -1:
-             print(f"⚠️ 파일 '{file_name}'의 image_id를 추출할 수 없어 건너뜁니다.")
+             print(f"파일 '{file_name}'의 image_id를 추출할 수 없어 건너뜁니다.")
              continue
         
         # YOLO 추론 실행
         # imgsz는 학습 시 사용한 크기(예: 640)와 동일하게 지정하는 것이 좋습니다.
         # conf(confidence threshold)는 필요에 따라 조정 가능합니다.
-        results = model(image_path, imgsz=640, conf=0.001, augment=True) 
+        # iou=0.8 또는 0.9와 같이 높게 설정하여 겹치는 박스를 더 많이 유지하도록 시도 가능
+
+        results = model(image_path, imgsz=640, conf=0.001, augment=True)
+        
         
         # 결과를 순회하며 submission_data에 추가
         for result in results:
@@ -113,7 +117,7 @@ def generate_submission_csv():
             yolo_ids = result.boxes.cls.cpu().numpy().astype(int)
             
             for box, score, yolo_id in zip(boxes, scores, yolo_ids):
-                # 💡 YOLO ID (0~72)를 원본 Category ID로 변환
+                # YOLO ID (0~72)를 원본 Category ID로 변환
                 if yolo_id >= len(ORIGINAL_CATEGORY_IDS):
                     print(f"경고: 알 수 없는 YOLO ID {yolo_id}가 감지되었습니다. 건너뜁니다.")
                     continue
@@ -156,9 +160,9 @@ def generate_submission_csv():
         df = df.sort_values(by=['image_id', 'score'], ascending=[True, False])
 
         df.to_csv(OUTPUT_CSV_PATH, index=False)
-        print(f"\n✅ 제출 파일 생성 완료: {OUTPUT_CSV_PATH}에 총 {len(submission_data)}개의 객체 저장.")
+        print(f"\n제출 파일 생성 완료: {OUTPUT_CSV_PATH}에 총 {len(submission_data)}개의 객체 저장.")
     else:
-        print("\n⚠️ 경고: 감지된 객체가 없어 제출 파일이 생성되지 않았습니다.")
+        print("\n경고: 감지된 객체가 없어 제출 파일이 생성되지 않았습니다.")
 
 
 if __name__ == '__main__':
