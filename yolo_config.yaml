@@ -2,7 +2,7 @@
 
 # 모델 아키텍처 및 입력 크기
 architecture: yolov8n
-input_size: 640
+input_size: 1280
 
 # 학습 하이퍼파라미터
 epochs: 50
