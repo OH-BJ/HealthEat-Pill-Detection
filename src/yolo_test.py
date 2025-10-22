@@ -104,9 +104,9 @@ def generate_submission_csv():
         # conf(confidence threshold)는 필요에 따라 조정 가능합니다.
         # iou=0.8 또는 0.9와 같이 높게 설정하여 겹치는 박스를 더 많이 유지하도록 시도 가능
 
-        results = model(image_path, imgsz=IMG_SIZE, conf=0.001)
-        #results = model(image_path, imgsz=640, conf=0.001, augment=True)
-        #results = model(image_path, imgsz=640, conf=0.001, augment=True, iou=0.9)
+        #results = model(image_path, imgsz=IMG_SIZE, conf=0.001)
+        results = model(image_path, imgsz=IMG_SIZE, conf=0.001, augment=True, iou=0.8)
+        #results = model(image_path, imgsz=IMG_SIZE, conf=0.001, augment=True)
         
         
         
