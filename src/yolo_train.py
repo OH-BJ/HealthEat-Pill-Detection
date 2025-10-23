@@ -33,7 +33,7 @@ def train_model(config):
         batch=config['batch_size'],
         imgsz=config['input_size'],
         device=device.type, 
-        #lr0=config['learning_rate'], 
+        lr0=config['learning_rate'], 
         
         # YAML 파일에서 읽어온 증강 하이퍼파라미터를 직접 전달
         mosaic=config.get('mosaic', 1.0),

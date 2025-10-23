@@ -7,7 +7,7 @@ input_size: 1280
 # 학습 하이퍼파라미터
 epochs: 150
 batch_size: 8
-learning_rate: 0.0001
+learning_rate: 0.005
 device: cuda # 또는 cpu
 
 # Early Stopping
