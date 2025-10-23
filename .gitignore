@@ -230,3 +230,4 @@ __marimo__/
 data/raw/
 runs/
 output/
+yolov8s.pt
