@@ -9,16 +9,16 @@ import re
 # 1. 설정 변수
 # =================================================================
 
-RUN_DIR = 'runs/yolov8_exp_251023_0925'
-
-# 테스트 이미지가 있는 폴더 경로
-TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
+RUN_DIR = 'runs/yolov8_exp_251023_1028'
 
 # 학습된 YOLO 모델 가중치 파일 경로
 MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')
 
 # 제출 파일 저장 경로
 OUTPUT_CSV_PATH = os.path.join(RUN_DIR, 'submission.csv')
+
+# 테스트 이미지가 있는 폴더 경로
+TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
 
 # =================================================================
 # 2. 클래스 ID 매핑 (YOLO ID -> 원본 ID)

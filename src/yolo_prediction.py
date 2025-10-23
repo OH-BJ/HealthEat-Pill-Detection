@@ -10,14 +10,15 @@ import os.path
 # =================================================================
 
 RUN_DIR = 'runs/yolov8_exp_251023_0925'
-# 학습된 YOLO 모델 가중치 파일 경로 (NOTE: 실제 best.pt 경로로 수정하세요.)
-MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')
 
-# 테스트 이미지가 있는 폴더 경로
-TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
+# 학습된 YOLO 모델 가중치 파일 경로
+MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')
 
 # 시각화 결과 이미지를 저장할 폴더 경로
 OUTPUT_VISUALS_DIR = os.path.join(RUN_DIR, 'test_visualizations')
+
+# 테스트 이미지가 있는 폴더 경로
+TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
 
 # =================================================================
 # 2. 추론 하이퍼파라미터 (🌟 시각적 검증 파라미터)
