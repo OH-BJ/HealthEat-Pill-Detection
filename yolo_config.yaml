@@ -2,13 +2,16 @@
 
 # 모델 아키텍처 및 입력 크기
 architecture: yolov8n
-input_size: 640
+input_size: 1280
 
 # 학습 하이퍼파라미터
-epochs: 50
+epochs: 300
 batch_size: 16
 learning_rate: 0.0001
 device: cuda # 또는 cpu
+
+# Early Stopping
+patience: 50
 
 # 데이터 경로 (YOLO.train()의 data 인자로 사용될 파일)
 data_yaml_path: data.yaml

@@ -9,16 +9,16 @@ import re
 # 1. 설정 변수
 # =================================================================
 
-RUN_DIR = 'runs/yolov8_exp_251021_1426'
-
-# 테스트 이미지가 있는 폴더 경로
-TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
+RUN_DIR = 'runs/yolov8_exp_251023_1028'
 
 # 학습된 YOLO 모델 가중치 파일 경로
 MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')
 
 # 제출 파일 저장 경로
 OUTPUT_CSV_PATH = os.path.join(RUN_DIR, 'submission.csv')
+
+# 테스트 이미지가 있는 폴더 경로
+TEST_IMAGES_DIR = 'data/ai05-level1-project/test_images' 
 
 # =================================================================
 # 2. 클래스 ID 매핑 (YOLO ID -> 원본 ID)
@@ -35,6 +35,8 @@ ORIGINAL_CATEGORY_IDS = [
     27776, 27925, 27992, 28762, 29344, 29450, 29666, 29870, 30307, 31704, 31862, 31884, 
     32309, 33008, 33207, 33877, 33879, 34596, 35205, 36636, 38161, 41767, 44198
 ]
+
+IMG_SIZE = 1280
 
 def get_image_id(filename):
     """
@@ -102,7 +104,10 @@ def generate_submission_csv():
         # conf(confidence threshold)는 필요에 따라 조정 가능합니다.
         # iou=0.8 또는 0.9와 같이 높게 설정하여 겹치는 박스를 더 많이 유지하도록 시도 가능
 
-        results = model(image_path, imgsz=640, conf=0.001, augment=True)
+        results = model(image_path, imgsz=IMG_SIZE, conf=0.001)
+        #results = model(image_path, imgsz=IMG_SIZE, conf=0.001, augment=True, iou=0.8)
+        #results = model(image_path, imgsz=IMG_SIZE, conf=0.001, augment=True)
+        
         
         
         # 결과를 순회하며 submission_data에 추가
