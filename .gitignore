@@ -10,6 +10,8 @@ data/yolo/labels/val_images/*
 !data/yolo/imaegs/val_images/.gitkeep
 data/yolo/labels/train_images.cache
 data/yolo/labels/val_images.cache
+data/yolo/labels_curated/train_images/
+data/yolo/labels_curated/val_images/
 
 #
 yolo11n.pt
@@ -231,3 +233,4 @@ data/raw/
 runs/
 output/
 yolov8s.pt
+
