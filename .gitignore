@@ -1,17 +1,9 @@
-# Data
+# Data^
+data/raw/
 data/ai05-level1-project
-data/yolo/images/train_images/*
-data/yolo/images/val_images/*
-!data/yolo/images/train_images/.gitkeep
-!data/yolo/images/val_images/.gitkeep
-data/yolo/labels/train_images/*
-data/yolo/labels/val_images/*
-!data/yolo/images/train_images/.gitkeep
-!data/yolo/imaegs/val_images/.gitkeep
-data/yolo/labels/train_images.cache
-data/yolo/labels/val_images.cache
-data/yolo/labels_curated/train_images/
-data/yolo/labels_curated/val_images/
+data/yolo/images/
+!data/yolo/**/.gitkeep
+!data/yolo/**/README.md
 
 #
 yolo11n.pt
@@ -229,7 +221,7 @@ marimo/_lsp/
 __marimo__/
 
 # Large data and output folders
-data/raw/
+
 runs/
 output/
 yolov8s.pt
