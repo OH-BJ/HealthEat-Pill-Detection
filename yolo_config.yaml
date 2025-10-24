@@ -21,4 +21,4 @@ data_yaml_path: data.yaml
 mosaic: 1.0
 hsv_h: 0
 hsv_s: 0
-hsv_v: 0
+#hsv_v: 0
