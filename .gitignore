@@ -4,6 +4,8 @@ data/ai05-level1-project
 data/yolo/images/
 !data/yolo/**/.gitkeep
 !data/yolo/**/README.md
+data/yolo/labels/*
+
 
 #
 yolo11n.pt
