@@ -38,6 +38,8 @@ def train_model(config):
         # YAML 파일에서 읽어온 증강 하이퍼파라미터를 직접 전달
         mosaic=config.get('mosaic', 1.0),
         hsv_h=config.get('hsv_h', 0.015),
+        hsv_s=config.get('hsv_s', 0.7),
+        hsv_v=config.get('hsv_v', 0.4),
         
         project='runs',
         name=experiment_name,
