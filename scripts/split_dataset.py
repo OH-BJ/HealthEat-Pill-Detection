@@ -5,10 +5,10 @@ import glob
 
 BASE_PATH = 'data/yolo'
 TRAIN_IMG_DIR = os.path.join(BASE_PATH, 'images/train_images')
-TRAIN_LABEL_DIR = os.path.join(BASE_PATH, 'labels/train_images') # YOLO TXT 파일 위치
+TRAIN_LABEL_DIR = os.path.join(BASE_PATH, 'labels_curated/train_images') # YOLO TXT 파일 위치
 
 VAL_IMG_DIR = os.path.join(BASE_PATH, 'images/val_images')
-VAL_LABEL_DIR = os.path.join(BASE_PATH, 'labels/val_images')
+VAL_LABEL_DIR = os.path.join(BASE_PATH, 'labels_curated/val_images')
 
 VAL_RATIO = 0.20 # 20%를 검증 데이터로 사용
 
