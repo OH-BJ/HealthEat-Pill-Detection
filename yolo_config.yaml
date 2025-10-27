@@ -1,7 +1,7 @@
 # pill_train_config.yaml
 
 # 모델 아키텍처 및 입력 크기
-architecture: yolov8n
+architecture: yolo11n
 input_size: 1280
 
 # 학습 하이퍼파라미터
@@ -22,4 +22,4 @@ mosaic: 1.0
 hsv_h: 0
 hsv_s: 0
 #hsv_v: 0
-degrees: 180
+#degrees: 180

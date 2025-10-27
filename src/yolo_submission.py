@@ -9,7 +9,7 @@ import re
 # 1. 설정 변수
 # =================================================================
 
-RUN_DIR = 'runs/yolov8_exp_251027_0854'
+RUN_DIR = 'runs/yolo11n_exp_251027_1014'
 
 # 학습된 YOLO 모델 가중치 파일 경로
 MODEL_WEIGHTS_PATH = os.path.join(RUN_DIR, 'weights/best.pt')

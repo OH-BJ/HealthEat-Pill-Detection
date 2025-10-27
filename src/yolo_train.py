@@ -24,7 +24,7 @@ def train_model(config):
 
     # 3. 학습 실행
     timestamp = datetime.now().strftime("%y%m%d_%H%M")
-    experiment_name = f"yolov8_exp_{timestamp}"
+    experiment_name = f"{config["architecture"]}_exp_{timestamp}"
 
     results = model.train(
         data=config['data_yaml_path'], 
