@@ -1,0 +1,27 @@
+# yolo_train_config.yaml
+
+# Train
+model: yolo11n.pt
+data: data.yaml
+epochs: 300
+patience: 50
+batch: 16
+imgsz: 1280
+
+device: 0
+
+project: 'runs'
+
+# Hyperparameters
+lr0: 0.001
+
+box: 6.0  # Box Loss Weight: 낱개로 떨어져 있어 Box 정확도 중요도를 상대적으로 낮춤 (기본 7.5)
+cls: 1.5  # Cls Loss Weight: 73개 클래스 구분을 위해 분류 정확도에 집중 (기본 0.5)
+dfl: 1.5  # DFL Loss Weight: 기본값 유지
+
+hsv_h: 0
+hsv_s: 0
+#hsv_v: 0
+#degrees: 180
+
+mosaic: 1.0
