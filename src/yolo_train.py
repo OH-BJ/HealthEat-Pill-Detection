@@ -40,6 +40,7 @@ def train_model(config):
         hsv_h=config.get('hsv_h', 0.015),
         hsv_s=config.get('hsv_s', 0.7),
         hsv_v=config.get('hsv_v', 0.4),
+        degrees=config.get('degrees', 0),
         
         project='runs',
         name=experiment_name,

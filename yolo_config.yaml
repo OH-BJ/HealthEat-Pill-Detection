@@ -18,7 +18,8 @@ data_yaml_path: data.yaml
 
 # 데이터 증강 하이퍼파라미터 (선택 사항)
 # 0.0이면 비활성화, 1.0이면 항상 적용
-mosaic: 0
+mosaic: 1.0
 hsv_h: 0
 hsv_s: 0
 #hsv_v: 0
+degrees: 180
