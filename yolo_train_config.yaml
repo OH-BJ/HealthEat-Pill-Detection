@@ -13,7 +13,7 @@ device: 0
 project: 'runs'
 
 # Hyperparameters
-lr0: 0.001
+#lr0: 0.001
 
 box: 6.0  # Box Loss Weight: 낱개로 떨어져 있어 Box 정확도 중요도를 상대적으로 낮춤 (기본 7.5)
 cls: 1.5  # Cls Loss Weight: 73개 클래스 구분을 위해 분류 정확도에 집중 (기본 0.5)
