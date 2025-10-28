@@ -2,7 +2,7 @@
 
 path: data/yolooooooooo
 train: images/train
-val: images/train
+val: images/val
 
 nc: 73
 
