@@ -1,8 +1,8 @@
 # pill_data.yaml
 
-path: data/yolo
+path: data/yolooooooooo
 train: images/train
-val: images/val
+val: images/train
 
 nc: 73
 

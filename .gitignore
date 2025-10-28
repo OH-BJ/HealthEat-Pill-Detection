@@ -11,7 +11,7 @@ data/yolo/labels_raw/train/*
 data/yolo/labels_raw/val/*
 !data/yolo/**/README.md
 !data/yolo/**/.gitkeep
-
+data/yolooooooooo
 #
 yolo11n.pt
 yolov8n.pt
