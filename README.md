@@ -12,13 +12,13 @@
 
 ## 실행 방법 (How-to-Run)
 
-### A. 환경 설정 (최초 1회)
+### 환경 설정 (최초 1회)
 1.  Python 3.11.9 버전을 권장합니다.
 2.  새 가상환경 (`venv-gpu`)을 생성하고 활성화합니다.
     ```bash
     # 3.11 버전으로 가상환경 생성
     py -3.11 -m venv venv-gpu
-    
+
     # 가상환경 활성화
     .\venv-gpu\Scripts\activate
     ```
@@ -26,34 +26,36 @@
     ```bash
     # 1. GPU용 PyTorch (CUDA 12.1) 설치
     pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
-    
+
     # 2. 나머지 필수 라이브러리 설치
     pip install -r requirements.txt
     ```
 
-### B. 데이터 준비 (최초 1회)
-1.  원본 데이터(`data/raw/train_images` 등)가 프로젝트 폴더 내에 준비되었는지 확인합니다.
-2.  YOLO 훈련용 데이터(`data/yolo/images/train_images`, `data/yolo/labels/train_images` 등)가 준비되었는지 확인합니다. (YOLO는 labels 폴더 하위 경로명이 images 폴더 하위 경로명과 같아야 합니다.)
+### 데이터 준비 (현재 데이터 이슈 확인)
+1.  **주의:** 현재 `data/ai05-level1-project/train_images` 폴더에 테스트 이미지가 포함된 문제가 확인되었습니다.
+2.  원본 데이터(`data/ai05-level1-project/train_images` 등) 정제 작업을 진행합니다. (테스트 이미지 제거 등)
+3.  정제된 데이터를 사용하여 `scripts/split_dataset.py` 스크립트로 YOLO 훈련용 데이터(`data/yolo/images/train_images`, `data/yolo/labels/train_images` 등)를 생성합니다. (YOLO는 labels 폴더 하위 경로명이 images 폴더 하위 경로명과 같아야 합니다.)
 
-### C. 모델 훈련 (공식 스크립트)
+### 모델 훈련 (공식 스크립트)
 1.  **`yolo_config.yaml`** 파일을 열어 훈련 설정을 수정합니다.
     *(예: `architecture`, `input_size`, `epochs`, `batch_size` 등)*
 2.  "공식 훈련 스크립트" (`src/yolo_train.py`)를 실행합니다.
     ```bash
     # data.yaml 사용 (또는 yolo_config.yaml에 지정된 경로)
-    python src/yolo_train.py 
+    python src/yolo_train.py
     ```
-3.  훈련 결과는 `runs/detect/` 폴더 내에 저장됩니다.
+3.  훈련 결과는 `runs/` 폴더 내에 저장됩니다.
 
-### D. 캐글 제출 (공식 스크립트)
+### 캐글 제출 (공식 스크립트)
 1.  **`src/yolo_submission.py`** 파일을 엽니다.
-2.  **`RUN_DIR`**에 훈련이 완료된 폴더 경로(예: `runs/detect/train_result`)를 정확히 입력합니다.
-3.  **`TEST_IMAGES_DIR`**에 테스트 이미지 폴더 경로(`data/raw/test_images`)가 맞는지 확인합니다.
-4.  "공식 제출 스크립트"를 실행합니다.
+2.  **`RUN_DIR`**에 훈련이 완료된 폴더 경로(예: `runs/ex)훈련결과`)를 정확히 입력합니다.
+3.  **`TEST_IMAGES_DIR`**에 테스트 이미지 폴더 경로(`data/ai05-level1-project/test_images`)가 맞는지 확인합니다.
+4.  (선택) 스크립트 상단의 **`CONF_THRESHOLD`**(예: 0.005), **`IOU_THRESHOLD`**(예: 0.7) 값을 조정합니다.
+5.  "공식 제출 스크립트"를 실행합니다.
     ```bash
     python src/yolo_submission.py
     ```
-5.  `RUN_DIR` 폴더 안에 생성된 `submission.csv` 파일을 캐글에 제출합니다.
+6.  `RUN_DIR` 폴더 안에 생성된 `submission.csv` 파일을 캐글에 제출합니다.
 
 ---
 
@@ -91,18 +93,17 @@
 ## 프로젝트 폴더 구조 (주요 폴더)
 
 ```
+.
 ├── data/
-│   ├── raw/         # (1. 캐글 원본 데이터: train/test 이미지)
-│   └── yolo/        # (2. YOLO 훈련/스크립트용 데이터)
-│       ├── images/  (train/val - B에서 생성)
-│       ├── labels/  (train/val - B에서 생성)
-│       └── labeled_data/ # (B의 split 스크립트가 읽는 소스 폴더)
-│           └── images/ # (.txt 라벨 원본) 
-├── runs/
-│   └── detect/      # (4. 훈련/제출 결과 저장)
-│       ├── train_result/ (훈련 결과 폴더 예시)
-│       │   ├── weights/best.pt
-│       │   └── submission.csv
+│   ├── ai05-level1-project/ # (1. 캐글 원본 데이터)
+│   │   ├── test_images/
+│   │   └── train_images/  # (주의: 현재 test 이미지가 포함된 상태)
+│   └── yolo/               # (2. YOLO 훈련용 데이터)
+│       ├── images/  (train/val)
+│       ├── labels/  (train/val)
+│       └── labeled_data/ # (split 스크립트용 라벨 소스 - 확인 필요)
+│           └── images/ # (.txt 라벨)
+├── runs/                # (4. 훈련/제출 결과 저장 - 훈련 시 자동 생성)
 │
 ├── src/               # (A. 공식 메인 스크립트)
 │   ├── yolo_train.py
