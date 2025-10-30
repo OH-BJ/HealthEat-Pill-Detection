@@ -1,1 +1,1 @@
-이미지 파일을 train_images 폴더와 val_images 폴더로 나누어야 함
+모든 .png 파일들을 해당 폴더 내에 둠.
