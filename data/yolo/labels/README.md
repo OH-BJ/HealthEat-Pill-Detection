@@ -1,3 +1,3 @@
-실제 labels 폴더 경로
+모든 .txt 파일들을 해당 폴더 내에 둠.
 
-YOLO 사용 시 사용할 labels txt 파일을 해당 폴더로 이동해야함
+train, val, test는 경로를 지정한 txt 파일을 통해 나눔.
