@@ -5,7 +5,7 @@ model: yolo11n.pt
 data: data.yaml
 epochs: 300
 patience: 50
-batch: 16
+batch: 0.9
 imgsz: 1280
 
 device: 0
@@ -15,9 +15,9 @@ project: 'runs'
 # Hyperparameters
 #lr0: 0.001
 
-box: 6.0  # Box Loss Weight: 낱개로 떨어져 있어 Box 정확도 중요도를 상대적으로 낮춤 (기본 7.5)
-cls: 1.5  # Cls Loss Weight: 73개 클래스 구분을 위해 분류 정확도에 집중 (기본 0.5)
-dfl: 1.5  # DFL Loss Weight: 기본값 유지
+# box: 6.0  # Box Loss Weight: 낱개로 떨어져 있어 Box 정확도 중요도를 상대적으로 낮춤 (기본 7.5)
+# cls: 1.5  # Cls Loss Weight: 73개 클래스 구분을 위해 분류 정확도에 집중 (기본 0.5)
+# dfl: 1.5  # DFL Loss Weight: 기본값 유지
 
 hsv_h: 0
 hsv_s: 0
@@ -25,3 +25,22 @@ hsv_s: 0
 #degrees: 180
 
 mosaic: 1.0
+
+
+# lrf: 0.01          # 최종 학습률 (최소한의 가중치 업데이트만 남김)
+# momentum: 0.937    # SGD 모멘텀 (변경 없음)
+# weight_decay: 0.0  # L2 정규화 (가중치 감소)를 완전히 제거하여 과적합 허용
+# dropout: 0.0
+# hsv_h: 0.0         # HSV Hue (색조) 증강 비율
+# hsv_s: 0.0         # HSV Saturation (채도) 증강 비율
+# hsv_v: 0.0         # HSV Value (명도) 증강 비율
+# degrees: 0.0       # 이미지 회전 각도
+# translate: 0.0     # 이미지 이동 비율
+# scale: 0.0         # 이미지 스케일 비율
+# shear: 0.0         # 이미지 전단(Shear) 비율
+# perspective: 0.0   # 이미지 원근 변환
+# flipud: 0.0        # 상하 반전 확률
+# fliplr: 0.0        # 좌우 반전 확률
+# mosaic: 0.0        # 모자이크 증강 확률
+# mixup: 0.0         # MixUp 증강 확률
+# copy_paste: 0.0    # Copy-Paste 증강 확률

@@ -1,1 +1,0 @@
-이미지 파일을 train_images 폴더와 val_images 폴더로 나누어야 함
