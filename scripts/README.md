@@ -14,6 +14,12 @@ seg 전용 이미지와 라벨을 훈련(Train) 세트와 검증(Validataion), �
 5. convert_polygon_to_yolo.py
 폴리콘 어노테이션들을 yolo-seg 환경에서 구동되게끔 전환해줍니다. 실행시 최하단에서 경로 설정 해주셔야 합니다.
 
+6. generate_mask.py
+알파채널 마스크 생성 스크립트
+
+7. composite_aug.py
+백그라운드와 알약 이미지 합성 스크립트
+
 --- 하단은 이제 쓰이지 않는 스크립트지만 추가로 더 해보고 싶은 사람들을 위해 남겼습니다
 
 - merge_anns_for_seg.py
@@ -21,3 +27,6 @@ seg 전용 이미지와 라벨을 훈련(Train) 세트와 검증(Validataion), �
 
 - json_2_seg(SAM).py
 merge_anns_for_seg.py를 통해 생성된 json 파일의 bbox를 읽고 자동으로 segmentation 처리를 해줍니다.
+
+- diffusion_aug.py
+알약 마스크 생성 및 디퓨전-inpainting 모델로 하여금 배경 변형 스크립트
