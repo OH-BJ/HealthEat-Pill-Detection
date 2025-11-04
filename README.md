@@ -63,8 +63,9 @@ python src/yolo_train.py --config yolo_train_config.yaml
 # Segmentation (CBAM) 훈련 실행
 python src/yolo_train_seg.py --config data_seg.yaml
 ```
-**Kaggle 제출**
-* `src/yolo_prediction.py` / `src/yolo_submission.py`: Kaggle 제출 파일(`submission.csv`) 생성 스크립트
+**Kaggle 제출 및 예측 시각화**
+* `src/yolo_submission.py`: Kaggle 제출 파일(`submission.csv`) 생성 스크립트
+* `src/yolo_prediction.py`: 테스트 이미지에 대한 예측 **시각화**(`test_visualizations`) 생성 스크립트
 
 ---
 
@@ -79,10 +80,10 @@ AI 모델을 서빙하는 API 서버 및 모바일 앱 코드입니다. (모델 
 
 ## 6. 팀원별 협업 일지
 
-* **오병주:** [여기에 오병주 님의 협업 일지 링크를 넣어주세요]
-* **이상윤:** [여기에 이상윤 님의 협업 일지 링크를 넣어주세요]
+* **오병주:** [오병주님 협업 일지](https://www.notion.so/1-13-2a1657925cde80d7930ac23084d35fa1?source=copy_link)
+* **이상윤:** [이상윤님 협업 일지]
 * **서준범:** [서준범님 협업 일지](https://www.notion.so/Daily-292e2cccbd88805fa167e5e2bfbb105b?source=copy_link)
-* **김승우:** [여기에 김승우 님의 협업 일지 링크를 넣어주세요]
+* **김승우:** [김승우님 협업 일지]
 
 ---
 
