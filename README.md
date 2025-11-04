@@ -20,7 +20,7 @@
 
 프로젝트의 전체 과정, 기술적 접근, 핵심 성과 및 교훈을 담은 최종 보고서(발표 자료) PDF입니다.
 
-* **[최종 발표자료 PDF 링크 (여기를 수정하세요)](./[AI05]경구약제_최종보고서_3팀.pdf)**
+* [최종 발표자료 PDF 링크](./경구약제 이미지 객체 검출 프로젝트 최종 보고서.pdf)
 
 ---
 
@@ -65,7 +65,7 @@ python src/yolo_train_seg.py --config data_seg.yaml
 ```
 **Kaggle 제출 및 예측 시각화**
 * `src/yolo_submission.py`: Kaggle 제출 파일(`submission.csv`) 생성 스크립트
-* `src/yolo_prediction.py`: 테스트 이미지에 대한 예측 **시각화**(`test_visualizations`) 생성 스크립트
+* `src/yolo_prediction.py`: 테스트 이미지에 대한 예측 시각화(`test_visualizations`) 생성 스크립트
 
 ---
 
@@ -81,7 +81,7 @@ AI 모델을 서빙하는 API 서버 및 모바일 앱 코드입니다. (모델 
 ## 6. 팀원별 협업 일지
 
 * **오병주:** [오병주님 협업 일지](https://www.notion.so/1-13-2a1657925cde80d7930ac23084d35fa1?source=copy_link)
-* **이상윤:** [이상윤님 협업 일지]
+* **이상윤:** [이상윤님 협업 일지](https://www.notion.so/Daily-1-2a0d0a925d2480dc8b17e6c33811b441)
 * **서준범:** [서준범님 협업 일지](https://www.notion.so/Daily-292e2cccbd88805fa167e5e2bfbb105b?source=copy_link)
 * **김승우:** [김승우님 협업 일지]
 
