@@ -81,7 +81,7 @@ AI 모델을 서빙하는 API 서버 및 모바일 앱 코드입니다. (모델 
 ## 6. 팀원별 협업 일지
 
 * **오병주:** [오병주님 협업 일지](https://www.notion.so/1-13-2a1657925cde80d7930ac23084d35fa1?source=copy_link)
-* **이상윤:** [이상윤님 협업 일지]
+* **이상윤:** [이상윤님 협업 일지](https://www.notion.so/Daily-1-2a0d0a925d2480dc8b17e6c33811b441?source=copy_link)
 * **서준범:** [서준범님 협업 일지](https://www.notion.so/Daily-292e2cccbd88805fa167e5e2bfbb105b?source=copy_link)
 * **김승우:** [김승우님 협업 일지]
 
